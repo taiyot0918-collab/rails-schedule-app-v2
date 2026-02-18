@@ -1,0 +1,8 @@
+<% content_for :title, "New schedule" %>
+
+<h1>新規予定の追加</h1> <%= render "form", schedule: @schedule %>
+
+<br>
+
+<div>
+  <%= link_to "予定一覧に戻る", schedules_path %> </div>

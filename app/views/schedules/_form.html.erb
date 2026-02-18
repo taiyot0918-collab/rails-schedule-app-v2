@@ -1,0 +1,32 @@
+<%= form_with(model: schedule, local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+    <% if schedule.errors[:title].any? %>
+      <div class="text-danger small"><%= schedule.errors[:title].first %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :start_date, class: "form-label" %>
+    <%= form.date_field :start_date, class: "form-control" %> </div>
+
+  <div class="mb-3">
+    <%= form.label :end_date, class: "form-label" %>
+    <%= form.date_field :end_date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-check">
+    <%= form.check_box :is_all_day, class: "form-check-input" %>
+    <%= form.label :is_all_day, class: "form-check-label" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :memo, class: "form-label" %>
+    <%= form.text_area :memo, class: "form-control", rows: 5 %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit "スケジュールを保存する", class: "btn btn-success w-100" %>
+  </div>
+<% end %>
